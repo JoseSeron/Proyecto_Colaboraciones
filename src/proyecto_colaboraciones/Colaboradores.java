@@ -1,13 +1,57 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyecto_colaboraciones;
+
+import java.util.ArrayList;
+import java.util.Collections;
+//import proyecto_colaboraciones.Colaborador;
 
 /**
  *
- * @author joser
+ * @author joser Clase Colaboradores Administrara un arraylist<colaboradores>,
+ * aqui se implementan todos los metodos del arraylist
  */
 public class Colaboradores {
-    
+
+    private ArrayList<Colaborador> colaboradores;
+
+    public Colaboradores() {
+    }
+
+    public void adicionar(Colaborador colaborador) {
+colaboradores.add(colaborador);
+    }
+
+    public void vaciar() {
+        for (Colaborador colaboradore : colaboradores) {
+            colaboradores.remove(colaboradore);
+        }
+    }
+
+    public Colaborador maximo() {
+
+    }
+
+    public Colaborador minimo() {
+
+    }
+
+    public int tamanio() {
+
+    }
+
+    public void listar() {
+
+    }
+
+    public void ordernar() {
+
+    }
+
+    public Colaborador obtenerColaboradorRandom() {
+
+    }
+
+    public ArrayList<Colaborador> obtenerPrimerosColaboradores() {
+
+    }
+
 }
