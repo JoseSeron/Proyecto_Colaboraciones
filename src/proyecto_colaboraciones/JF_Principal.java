@@ -27,8 +27,39 @@ public class JF_Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jp_fondo = new javax.swing.JPanel();
-        jp_estadisticas = new javax.swing.JPanel();
+        jp_stats = new javax.swing.JPanel();
+        jp_estadisticas_utilizado = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jl_stats_utilizado = new javax.swing.JLabel();
+        jp_estadisticas_utilizado1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jl_stats_intentos = new javax.swing.JLabel();
+        jp_estadisticas_utilizado2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jl_stats_voluntad = new javax.swing.JLabel();
+        jp_estadisticas_utilizado3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jl_stats_ejecucion = new javax.swing.JLabel();
         jp_colaboradores = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_administracion = new javax.swing.JMenu();
         jmi_colaboradores = new javax.swing.JMenuItem();
@@ -36,35 +67,321 @@ public class JF_Principal extends javax.swing.JFrame {
         jmi_acerca = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1060, 715));
+        setTitle("Colaboraciones V1.0 por Jose Seron");
+        setMinimumSize(new java.awt.Dimension(1060, 800));
         setPreferredSize(new java.awt.Dimension(1040, 725));
         setSize(jp_fondo.getPreferredSize());
 
         jp_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jp_fondo.setPreferredSize(new java.awt.Dimension(1040, 666));
 
-        javax.swing.GroupLayout jp_estadisticasLayout = new javax.swing.GroupLayout(jp_estadisticas);
-        jp_estadisticas.setLayout(jp_estadisticasLayout);
-        jp_estadisticasLayout.setHorizontalGroup(
-            jp_estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
+        jp_stats.setBackground(new java.awt.Color(153, 153, 153));
+
+        jp_estadisticas_utilizado.setBackground(new java.awt.Color(204, 255, 255));
+        jp_estadisticas_utilizado.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("UTILIZADO");
+
+        jl_stats_utilizado.setFont(new java.awt.Font("Segoe UI", 1, 55)); // NOI18N
+        jl_stats_utilizado.setForeground(new java.awt.Color(0, 0, 0));
+        jl_stats_utilizado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_stats_utilizado.setText("000000");
+
+        javax.swing.GroupLayout jp_estadisticas_utilizadoLayout = new javax.swing.GroupLayout(jp_estadisticas_utilizado);
+        jp_estadisticas_utilizado.setLayout(jp_estadisticas_utilizadoLayout);
+        jp_estadisticas_utilizadoLayout.setHorizontalGroup(
+            jp_estadisticas_utilizadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_estadisticas_utilizadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_estadisticas_utilizadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jl_stats_utilizado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator1))
+                .addContainerGap())
         );
-        jp_estadisticasLayout.setVerticalGroup(
-            jp_estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+        jp_estadisticas_utilizadoLayout.setVerticalGroup(
+            jp_estadisticas_utilizadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_estadisticas_utilizadoLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_stats_utilizado, javax.swing.GroupLayout.PREFERRED_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jp_colaboradores.setBackground(new java.awt.Color(204, 255, 255));
+        jp_estadisticas_utilizado1.setBackground(new java.awt.Color(102, 255, 255));
+        jp_estadisticas_utilizado1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("INTENTOS");
+
+        jl_stats_intentos.setFont(new java.awt.Font("Segoe UI", 1, 55)); // NOI18N
+        jl_stats_intentos.setForeground(new java.awt.Color(0, 0, 0));
+        jl_stats_intentos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_stats_intentos.setText("000000");
+
+        javax.swing.GroupLayout jp_estadisticas_utilizado1Layout = new javax.swing.GroupLayout(jp_estadisticas_utilizado1);
+        jp_estadisticas_utilizado1.setLayout(jp_estadisticas_utilizado1Layout);
+        jp_estadisticas_utilizado1Layout.setHorizontalGroup(
+            jp_estadisticas_utilizado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_estadisticas_utilizado1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_estadisticas_utilizado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jl_stats_intentos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator2))
+                .addContainerGap())
+        );
+        jp_estadisticas_utilizado1Layout.setVerticalGroup(
+            jp_estadisticas_utilizado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_estadisticas_utilizado1Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_stats_intentos, javax.swing.GroupLayout.PREFERRED_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jp_estadisticas_utilizado2.setBackground(new java.awt.Color(0, 255, 255));
+        jp_estadisticas_utilizado2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("VOLUNTAD");
+
+        jl_stats_voluntad.setFont(new java.awt.Font("Segoe UI", 1, 55)); // NOI18N
+        jl_stats_voluntad.setForeground(new java.awt.Color(0, 0, 0));
+        jl_stats_voluntad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_stats_voluntad.setText("000000");
+
+        javax.swing.GroupLayout jp_estadisticas_utilizado2Layout = new javax.swing.GroupLayout(jp_estadisticas_utilizado2);
+        jp_estadisticas_utilizado2.setLayout(jp_estadisticas_utilizado2Layout);
+        jp_estadisticas_utilizado2Layout.setHorizontalGroup(
+            jp_estadisticas_utilizado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_estadisticas_utilizado2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_estadisticas_utilizado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jl_stats_voluntad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator3))
+                .addContainerGap())
+        );
+        jp_estadisticas_utilizado2Layout.setVerticalGroup(
+            jp_estadisticas_utilizado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_estadisticas_utilizado2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_stats_voluntad, javax.swing.GroupLayout.PREFERRED_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jp_estadisticas_utilizado3.setBackground(new java.awt.Color(0, 153, 153));
+        jp_estadisticas_utilizado3.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("EJECUCIÓN");
+
+        jl_stats_ejecucion.setFont(new java.awt.Font("Segoe UI", 1, 55)); // NOI18N
+        jl_stats_ejecucion.setForeground(new java.awt.Color(0, 0, 0));
+        jl_stats_ejecucion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_stats_ejecucion.setText("000000");
+
+        javax.swing.GroupLayout jp_estadisticas_utilizado3Layout = new javax.swing.GroupLayout(jp_estadisticas_utilizado3);
+        jp_estadisticas_utilizado3.setLayout(jp_estadisticas_utilizado3Layout);
+        jp_estadisticas_utilizado3Layout.setHorizontalGroup(
+            jp_estadisticas_utilizado3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_estadisticas_utilizado3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_estadisticas_utilizado3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jl_stats_ejecucion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator4))
+                .addContainerGap())
+        );
+        jp_estadisticas_utilizado3Layout.setVerticalGroup(
+            jp_estadisticas_utilizado3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_estadisticas_utilizado3Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_stats_ejecucion, javax.swing.GroupLayout.PREFERRED_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jp_statsLayout = new javax.swing.GroupLayout(jp_stats);
+        jp_stats.setLayout(jp_statsLayout);
+        jp_statsLayout.setHorizontalGroup(
+            jp_statsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_statsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_statsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_estadisticas_utilizado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_estadisticas_utilizado1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_estadisticas_utilizado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_estadisticas_utilizado3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jp_statsLayout.setVerticalGroup(
+            jp_statsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_statsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_estadisticas_utilizado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jp_estadisticas_utilizado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jp_estadisticas_utilizado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jp_estadisticas_utilizado3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jp_colaboradores.setBackground(new java.awt.Color(153, 153, 153));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 60)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Colaboradores");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jButton1.setText("BUSCAR");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Simple Aleatoria", "Lista Aleatoria", "Rueda Aletoria" }));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("##");
+        jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("NOMBRE DE COLABORADOR");
+        jLabel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("COLABORACIONES (Clic para actualizar)");
+        jLabel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("PORCENTAJE");
+        jLabel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel10.setText("00");
+        jLabel10.setOpaque(true);
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("PARTICIPANTE ##");
+        jLabel11.setOpaque(true);
+
+        jButton2.setText("-");
+
+        jButton3.setText("+");
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel12.setText("##");
+        jLabel12.setOpaque(true);
 
         javax.swing.GroupLayout jp_colaboradoresLayout = new javax.swing.GroupLayout(jp_colaboradores);
         jp_colaboradores.setLayout(jp_colaboradoresLayout);
         jp_colaboradoresLayout.setHorizontalGroup(
             jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 549, Short.MAX_VALUE)
+            .addGroup(jp_colaboradoresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator5)
+                    .addGroup(jp_colaboradoresLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_colaboradoresLayout.createSequentialGroup()
+                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jp_colaboradoresLayout.createSequentialGroup()
+                        .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jp_colaboradoresLayout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         jp_colaboradoresLayout.setVerticalGroup(
             jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jp_colaboradoresLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jp_colaboradoresLayout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(jLabel11))
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(555, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jp_fondoLayout = new javax.swing.GroupLayout(jp_fondo);
@@ -73,7 +390,7 @@ public class JF_Principal extends javax.swing.JFrame {
             jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_fondoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jp_estadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jp_stats, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jp_colaboradores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -84,7 +401,7 @@ public class JF_Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jp_colaboradores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp_estadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jp_stats, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -157,12 +474,43 @@ public class JF_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JLabel jl_stats_ejecucion;
+    private javax.swing.JLabel jl_stats_intentos;
+    private javax.swing.JLabel jl_stats_utilizado;
+    private javax.swing.JLabel jl_stats_voluntad;
     private javax.swing.JMenu jm_administracion;
     private javax.swing.JMenuItem jmi_acerca;
     private javax.swing.JMenuItem jmi_colaboradores;
     private javax.swing.JPanel jp_colaboradores;
-    private javax.swing.JPanel jp_estadisticas;
+    private javax.swing.JPanel jp_estadisticas_utilizado;
+    private javax.swing.JPanel jp_estadisticas_utilizado1;
+    private javax.swing.JPanel jp_estadisticas_utilizado2;
+    private javax.swing.JPanel jp_estadisticas_utilizado3;
     private javax.swing.JPanel jp_fondo;
+    private javax.swing.JPanel jp_stats;
     // End of variables declaration//GEN-END:variables
 }
