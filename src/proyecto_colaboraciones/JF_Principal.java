@@ -4,6 +4,10 @@
  */
 package proyecto_colaboraciones;
 
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
 /**
  *
  * @author joser
@@ -54,12 +58,13 @@ public class JF_Principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jl_colaboracionesClicleable = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jb_indiceCero = new javax.swing.JLabel();
+        jl_indiceCero = new javax.swing.JLabel();
         jl_nombreCero = new javax.swing.JLabel();
         jb_menosCero = new javax.swing.JButton();
         jl_masCero = new javax.swing.JButton();
         jl_colaboracionesCero = new javax.swing.JLabel();
         pb_porcentajeCero = new javax.swing.JProgressBar();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_administracion = new javax.swing.JMenu();
         jmi_colaboradores = new javax.swing.JMenuItem();
@@ -287,12 +292,12 @@ public class JF_Principal extends javax.swing.JFrame {
         jLabel9.setText("PORCENTAJE");
         jLabel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jb_indiceCero.setBackground(new java.awt.Color(255, 255, 255));
-        jb_indiceCero.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        jb_indiceCero.setForeground(new java.awt.Color(0, 0, 0));
-        jb_indiceCero.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jb_indiceCero.setText("00");
-        jb_indiceCero.setOpaque(true);
+        jl_indiceCero.setBackground(new java.awt.Color(255, 255, 255));
+        jl_indiceCero.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jl_indiceCero.setForeground(new java.awt.Color(0, 0, 0));
+        jl_indiceCero.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jl_indiceCero.setText("00");
+        jl_indiceCero.setOpaque(true);
 
         jl_nombreCero.setBackground(new java.awt.Color(255, 255, 255));
         jl_nombreCero.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
@@ -310,6 +315,13 @@ public class JF_Principal extends javax.swing.JFrame {
         jl_colaboracionesCero.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jl_colaboracionesCero.setText("##");
         jl_colaboracionesCero.setOpaque(true);
+
+        jButton1.setText("prueba");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp_colaboradoresLayout = new javax.swing.GroupLayout(jp_colaboradores);
         jp_colaboradores.setLayout(jp_colaboradoresLayout);
@@ -330,7 +342,7 @@ public class JF_Principal extends javax.swing.JFrame {
                             .addComponent(cb_archivo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jp_colaboradoresLayout.createSequentialGroup()
                         .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jb_indiceCero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jl_indiceCero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -350,6 +362,10 @@ public class JF_Principal extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pb_porcentajeCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_colaboradoresLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(45, 45, 45))
         );
         jp_colaboradoresLayout.setVerticalGroup(
             jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,10 +394,12 @@ public class JF_Principal extends javax.swing.JFrame {
                         .addComponent(jl_colaboracionesCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jb_menosCero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jb_indiceCero)
+                        .addComponent(jl_indiceCero)
                         .addComponent(jl_nombreCero))
                     .addComponent(pb_porcentajeCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(555, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout jp_fondoLayout = new javax.swing.GroupLayout(jp_fondo);
@@ -437,6 +455,43 @@ public class JF_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        /*
+        for (int i = 0; i < 5; i++) {
+             JLabel label = new JLabel();
+             
+             
+             int posX = jl_indiceCero.getX();
+             int posY = jl_indiceCero.getY();
+             label.setBounds(posX, posY-jl_indiceCero.getHeight(), jl_indiceCero.getWidth(), jl_indiceCero.getHeight());
+             
+             label.setLocation(posX, posY+label.getHeight());
+             jp_colaboradores.add(label);
+        }
+        */
+        
+           
+    for (int i = 0; i < 40; i++) {
+        JLabel label = new JLabel("00",SwingConstants.TRAILING);
+        jp_colaboradores.add(label);
+       
+        int posX = jl_indiceCero.getX();
+        int posY = jl_indiceCero.getY() + (i + 1) * jl_indiceCero.getHeight();
+        
+        label.setBounds(posX, posY, jl_indiceCero.getWidth(), jl_indiceCero.getHeight());
+        label.setOpaque(true);
+  
+        label.setFont(jl_indiceCero.getFont());
+        
+    }
+   
+    jp_colaboradores.revalidate();
+    jp_colaboradores.repaint();
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -476,6 +531,7 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu Ayuda;
     private javax.swing.JComboBox<String> cb_archivo;
     private javax.swing.JComboBox<String> cb_modos;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -491,10 +547,10 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JButton jb_buscarAleatorio;
-    private javax.swing.JLabel jb_indiceCero;
     private javax.swing.JButton jb_menosCero;
     private javax.swing.JLabel jl_colaboracionesCero;
     private javax.swing.JLabel jl_colaboracionesClicleable;
+    private javax.swing.JLabel jl_indiceCero;
     private javax.swing.JButton jl_masCero;
     private javax.swing.JLabel jl_nombreCero;
     private javax.swing.JLabel jl_stats_ejecucion;
