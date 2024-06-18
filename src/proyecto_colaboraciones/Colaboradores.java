@@ -26,15 +26,15 @@ colaboradores.add(colaborador);
         }
     }
 
-    public Colaborador maximo() {
+    public void maximo() {
 
     }
 
-    public Colaborador minimo() {
+    public void minimo() {
 
     }
 
-    public int tamanio() {
+    public void tamanio() {
 
     }
 
@@ -46,11 +46,11 @@ colaboradores.add(colaborador);
 
     }
 
-    public Colaborador obtenerColaboradorRandom() {
+    public void obtenerColaboradorRandom() {
 
     }
 
-    public ArrayList<Colaborador> obtenerPrimerosColaboradores() {
+    public void obtenerPrimerosColaboradores() {
 
     }
 

@@ -26,21 +26,96 @@ public class JF_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jp_fondo = new javax.swing.JPanel();
+        jp_estadisticas = new javax.swing.JPanel();
+        jp_colaboradores = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jm_administracion = new javax.swing.JMenu();
+        jmi_colaboradores = new javax.swing.JMenuItem();
+        Ayuda = new javax.swing.JMenu();
+        jmi_acerca = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1000, 681));
-        setPreferredSize(new java.awt.Dimension(1000, 681));
-        setSize(new java.awt.Dimension(1000, 680));
+        setMinimumSize(new java.awt.Dimension(1060, 715));
+        setPreferredSize(new java.awt.Dimension(1040, 725));
+        setSize(jp_fondo.getPreferredSize());
+
+        jp_fondo.setBackground(new java.awt.Color(255, 255, 255));
+        jp_fondo.setPreferredSize(new java.awt.Dimension(1040, 666));
+
+        javax.swing.GroupLayout jp_estadisticasLayout = new javax.swing.GroupLayout(jp_estadisticas);
+        jp_estadisticas.setLayout(jp_estadisticasLayout);
+        jp_estadisticasLayout.setHorizontalGroup(
+            jp_estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 288, Short.MAX_VALUE)
+        );
+        jp_estadisticasLayout.setVerticalGroup(
+            jp_estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 708, Short.MAX_VALUE)
+        );
+
+        jp_colaboradores.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jp_colaboradoresLayout = new javax.swing.GroupLayout(jp_colaboradores);
+        jp_colaboradores.setLayout(jp_colaboradoresLayout);
+        jp_colaboradoresLayout.setHorizontalGroup(
+            jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 549, Short.MAX_VALUE)
+        );
+        jp_colaboradoresLayout.setVerticalGroup(
+            jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jp_fondoLayout = new javax.swing.GroupLayout(jp_fondo);
+        jp_fondo.setLayout(jp_fondoLayout);
+        jp_fondoLayout.setHorizontalGroup(
+            jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_fondoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_estadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jp_colaboradores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jp_fondoLayout.setVerticalGroup(
+            jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_fondoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_fondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jp_colaboradores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_estadisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jm_administracion.setText("Administración");
+
+        jmi_colaboradores.setText("Colaboradores");
+        jm_administracion.add(jmi_colaboradores);
+
+        jMenuBar1.add(jm_administracion);
+
+        Ayuda.setText("Ayuda");
+
+        jmi_acerca.setText("Acerca");
+        Ayuda.add(jmi_acerca);
+
+        jMenuBar1.add(Ayuda);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1001, Short.MAX_VALUE)
+            .addComponent(jp_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 681, Short.MAX_VALUE)
+            .addComponent(jp_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
         );
+
+        getAccessibleContext().setAccessibleName("colabo");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -81,5 +156,13 @@ public class JF_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Ayuda;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jm_administracion;
+    private javax.swing.JMenuItem jmi_acerca;
+    private javax.swing.JMenuItem jmi_colaboradores;
+    private javax.swing.JPanel jp_colaboradores;
+    private javax.swing.JPanel jp_estadisticas;
+    private javax.swing.JPanel jp_fondo;
     // End of variables declaration//GEN-END:variables
 }
