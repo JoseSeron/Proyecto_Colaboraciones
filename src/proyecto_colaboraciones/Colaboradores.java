@@ -1,5 +1,6 @@
 package proyecto_colaboraciones;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,30 +13,34 @@ import java.util.Random;
  * @author joser Clase Colaboradores Administrara un arraylist<colaboradores>,
  * aqui se implementan todos los metodos del arraylist
  */
-public class Colaboradores {
+public class Colaboradores implements Serializable {
 
     private ArrayList<Colaborador> colaboradores;
 
     public Colaboradores() {
     }
 
+    //añadirle un colaborador a la lista
     public void adicionar(Colaborador colaborador) { //añadir un colaborador 
         colaboradores.add(colaborador);
     }
 
-    public void vaciar() { //vaciar lista de colaboradores
+    //vaciar lista de colaboradores
+    public void vaciar() {
         for (Colaborador colaboradore : colaboradores) {
             colaboradores.remove(colaboradore);
         }
     }
 
-    public Colaborador maximo() { //el colaborador con mayor numero de colaboraciones
+    //retorna el colaborador con mas colaboraciones
+    public Colaborador maximo() {
         if (colaboradores.isEmpty()) {
             return null;
         }
         return Collections.max(colaboradores, Comparator.comparingInt(Colaborador::getNumeroColaboraciones));
     }
 
+    //retorna colaborador con menos colaboraciones
     public Colaborador minimo() {
         if (colaboradores.isEmpty()) {
             return null;
@@ -43,12 +48,14 @@ public class Colaboradores {
         return Collections.min(colaboradores, Comparator.comparingInt(Colaborador::getNumeroColaboraciones));
     }
 
+    //retorna tamaño del arraylist
     public int tamanio() {
         return colaboradores.size();
     }
 
+    //lista todos los colaboradores en Output
     public void listar() {
-        //lista todos los colaboradores en Output
+
         for (Colaborador colaborador : colaboradores) {
             System.out.println(colaborador);
         }
@@ -60,16 +67,19 @@ public class Colaboradores {
         Collections.sort(colaboradores, Comparator.comparingInt(Colaborador::getNumeroColaboraciones));
     }
 
-     public Colaborador obtenerColaboradorRandom() {
+    //selecciona aleatoriamente un colaborador de los primeros 10(o menos) con 
+    //menos colaboraciones
+    public Colaborador obtenerColaboradorRandom() {
         if (colaboradores.size() < 10) {
             return null;
         }
-        List<Colaborador> menosColaboradores = obtenerPrimerosColaboradores();
+        ArrayList<Colaborador> menosColaboradores = obtenerPrimerosColaboradores();
         Random random = new Random();
         return menosColaboradores.get(random.nextInt(menosColaboradores.size()));
     }
 
-    public List<Colaborador> obtenerPrimerosColaboradores() {
+    //ordena lista y devuelve una lista de los 10 con menos colaboraciones
+    public ArrayList<Colaborador> obtenerPrimerosColaboradores() {
         ordernar();
         int size = Math.min(10, colaboradores.size());
         return new ArrayList<>(colaboradores.subList(0, size));

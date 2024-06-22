@@ -30,6 +30,14 @@ public class JF_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_dialogAcerca = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jp_fondo = new javax.swing.JPanel();
         jp_stats = new javax.swing.JPanel();
         jp_estadisticas_utilizado = new javax.swing.JPanel();
@@ -70,6 +78,97 @@ public class JF_Principal extends javax.swing.JFrame {
         jmi_colaboradores = new javax.swing.JMenuItem();
         Ayuda = new javax.swing.JMenu();
         jmi_acerca = new javax.swing.JMenuItem();
+
+        jd_dialogAcerca.setMaximumSize(new java.awt.Dimension(830, 590));
+        jd_dialogAcerca.setMinimumSize(new java.awt.Dimension(830, 590));
+        jd_dialogAcerca.setModal(true);
+        jd_dialogAcerca.setPreferredSize(new java.awt.Dimension(830, 590));
+        jd_dialogAcerca.setSize(new java.awt.Dimension(820, 590));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Colaboraciones v1.0");
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(java.awt.Color.white);
+        jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("El nacimiento de un programa en Java\n\nEn una tranquila noche de Tegucigalpa, Honduras, Roberto se encontraba desvelado en su pequeño apartamento. Con la ciudad \ndurmiendo, él estaba absorto en su misión: desarrollar un programa en Java para seleccionar colaboradores al azar, asegurando que todos \ntuvieran la oportunidad de participar en proyectos.\n\nLa idea era sencilla pero poderosa. Roberto quería crear un sistema que permitiera seleccionar colaboradores en tres modos: Simple, Lista \ny Rueda. El modo Simple elegiría a un colaborador al azar; Lista, ordenaría a los colaboradores de forma aleatoria y los asignaría \nsucesivamente; y Rueda, garantizaría que todos los colaboradores rotaran antes de volver a ser seleccionados.\n\nCon su taza de café vacía a un lado y la tenue luz de su escritorio iluminando el teclado, Roberto trabajaba con dedicación. Clases, métodos \ny estructuras de datos se combinaban en su mente y en su pantalla, tomando forma a medida que avanzaba la noche. Cada línea de código \nera un paso más hacia su objetivo.\n\nFinalmente, con los primeros rayos de sol asomando por la ventana, Roberto contempló su creación. Había logrado desarrollar un \nprograma que no solo facilitaba la colaboración, sino que también promovía la equidad en la selección de participantes. Guardó su trabajo y, \ncon una sonrisa de satisfacción, se dispuso a descansar.\n\nAsí, en una noche de desvelo en Tegucigalpa, nació un programa en Java destinado a mejorar la colaboración en los equipos, fruto de la \npasión y el esfuerzo de Roberto.\n\n(Breve historia generada por ChatGPT)\n");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Jose Seron | 2024-06-21");
+
+        jButton2.setText("OK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(350, 350, 350)
+                .addComponent(jButton2)
+                .addContainerGap(344, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(288, 288, 288))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(19, 19, 19))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(311, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(448, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jd_dialogAcercaLayout = new javax.swing.GroupLayout(jd_dialogAcerca.getContentPane());
+        jd_dialogAcerca.getContentPane().setLayout(jd_dialogAcercaLayout);
+        jd_dialogAcercaLayout.setHorizontalGroup(
+            jd_dialogAcercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_dialogAcercaLayout.setVerticalGroup(
+            jd_dialogAcercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Colaboraciones V1.0 por Jose Seron");
@@ -390,13 +489,12 @@ public class JF_Principal extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jl_masCero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jl_colaboracionesCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jb_menosCero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jl_indiceCero)
-                            .addComponent(jl_nombreCero))
-                        .addComponent(pb_porcentajeCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jl_colaboracionesCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_menosCero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jl_indiceCero)
+                        .addComponent(jl_nombreCero))
+                    .addComponent(pb_porcentajeCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 492, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(34, 34, 34))
@@ -433,6 +531,11 @@ public class JF_Principal extends javax.swing.JFrame {
         Ayuda.setText("Ayuda");
 
         jmi_acerca.setText("Acerca");
+        jmi_acerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_acercaActionPerformed(evt);
+            }
+        });
         Ayuda.add(jmi_acerca);
 
         jMenuBar1.add(Ayuda);
@@ -457,7 +560,7 @@ public class JF_Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         /*
         for (int i = 0; i < 5; i++) {
              JLabel label = new JLabel();
@@ -470,27 +573,36 @@ public class JF_Principal extends javax.swing.JFrame {
              label.setLocation(posX, posY+label.getHeight());
              jp_colaboradores.add(label);
         }
-        */
-        
-           
-    for (int i = 0; i < 40; i++) {
-        JLabel label = new JLabel("00",SwingConstants.TRAILING);
-        jp_colaboradores.add(label);
-       
-        int posX = jl_indiceCero.getX();
-        int posY = jl_indiceCero.getY() + (i + 1) * jl_indiceCero.getHeight();
-        
-        label.setBounds(posX, posY, jl_indiceCero.getWidth(), jl_indiceCero.getHeight());
-        label.setOpaque(true);
-  
-        label.setFont(jl_indiceCero.getFont());
-        
-    }
-   
-    jp_colaboradores.revalidate();
-    jp_colaboradores.repaint();
-       
+         */
+        for (int i = 0; i < 40; i++) {
+            JLabel label = new JLabel("00", SwingConstants.TRAILING);
+            jp_colaboradores.add(label);
+
+            int posX = jl_indiceCero.getX();
+            int posY = jl_indiceCero.getY() + (i + 1) * jl_indiceCero.getHeight();
+
+            label.setBounds(posX, posY, jl_indiceCero.getWidth(), jl_indiceCero.getHeight());
+            label.setOpaque(true);
+
+            label.setFont(jl_indiceCero.getFont());
+
+        }
+
+        jp_colaboradores.revalidate();
+        jp_colaboradores.repaint();
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jmi_acercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_acercaActionPerformed
+        // TODO add your handling code here:
+        jd_dialogAcerca.setLocationRelativeTo(jp_fondo);
+        jd_dialogAcerca.setVisible(true);
+    }//GEN-LAST:event_jmi_acercaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        jd_dialogAcerca.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -532,22 +644,30 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_archivo;
     private javax.swing.JComboBox<String> cb_modos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jb_buscarAleatorio;
     private javax.swing.JButton jb_menosCero;
+    private javax.swing.JDialog jd_dialogAcerca;
     private javax.swing.JLabel jl_colaboracionesCero;
     private javax.swing.JLabel jl_colaboracionesClicleable;
     private javax.swing.JLabel jl_indiceCero;
