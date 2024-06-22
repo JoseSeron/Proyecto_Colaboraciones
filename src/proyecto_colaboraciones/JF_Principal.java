@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package proyecto_colaboraciones;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.util.ArrayList;
@@ -29,7 +27,7 @@ public class JF_Principal extends javax.swing.JFrame {
         initComponents();
         actualizarComboBoxConArchivos(cb_archivo);
         actualizarEstadisticaEjecucion();
-        
+
     }
 
     /**
@@ -601,43 +599,50 @@ public class JF_Principal extends javax.swing.JFrame {
                     jp_colaboradores.remove(listaColaboraciones.get(listaIndices.indexOf(label)));
                     jp_colaboradores.remove(listaBotonMas.get(listaIndices.indexOf(label)));
                     jp_colaboradores.remove(listaBarras.get(listaIndices.indexOf(label)));
-                    
+
                 }
-                
+
             }
 
-            /*
-            for (JLabel nombre : listaNombres) {
-                     if (listaNombres.indexOf(nombre) != 0) {
-                    jp_colaboradores.remove(nombre);
-                    
-                }
-            }
-            
-            for (JButton boton : listaBotonMenos) {
-                   if (listaNombres.indexOf(nombre) != 0) {
-                    jp_colaboradores.remove(nombre);
-                    
-                }
-            }
-             */
-//            for (int ite = 1; ite < listaIndices.size(); ite++) {
-//               
-//                    jp_colaboradores.remove(listaIndices.get(ite));
-////                    jp_colaboradores.remove(listaNombres.get(ite));
-//                    
-//                
-//            }
         }
 
         //en selected cargare todos los datos del nuevo archivo
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             System.out.println("Selected: " + evt.getItem());
             llenarPanelColaboradores((String) evt.getItem());
+
+            ActionListener listenerBotonMenos = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JButton boton = (JButton) e.getSource();
+                    System.out.println("Has hecho clic en " + boton.getText());
+                }
+            };
+            
+                       ActionListener listenerBotonMas = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JButton boton = (JButton) e.getSource();
+                    System.out.println("Has hecho clic en " + boton.getText());
+                }
+            };
+            
+            //añadir listener a los botones
+            for (JButton boton : listaBotonMenos) {
+                boton.addActionListener(listenerBotonMenos);
+                
+            }
+            
+            for (JButton boton : listaBotonMas) {
+                boton.addActionListener(listenerBotonMas);
+            }
+            
+
         }
     }//GEN-LAST:event_cb_archivoItemStateChanged
-    
+
     public void llenarPanelColaboradores(String nombreArchivo) {
+
         ManejoArchivosTexto adminTextoPrincipal = new ManejoArchivosTexto("./".concat(nombreArchivo));
         int iterador = 0;
         if (adminTextoPrincipal.existeArchivo()) {
@@ -650,26 +655,26 @@ public class JF_Principal extends javax.swing.JFrame {
             int colaboracionesX = jl_colaboracionesCero.getX();
             int botonMenosX = jb_menosCero.getX();
             int barraX = jpb_porcentajeCero.getX();
-            
+
             jl_colaboracionesCero.setSize(jl_colaboracionesCero.getWidth(), jl_indiceCero.getHeight());
-            
+
             for (Colaborador colaborador : listaColaboradores) {
-                
+
                 int yDezplazar = jl_indiceCero.getY() + (iterador * jl_indiceCero.getHeight());
                 System.out.println(colaborador.toString());
-                
+
                 if (iterador == 0) {
                     jl_indiceCero.setText(String.format("%02d", iterador + 1));
                     jl_nombreCero.setText(colaborador.getNombre());
                     jl_colaboracionesCero.setText(String.format("%02d", colaborador.getNumeroColaboraciones()));
-                    
+
                     listaNombres.add(jl_nombreCero);
                     listaBotonMenos.add(jb_menosCero);
                     listaColaboraciones.add(jl_colaboracionesCero);
                     listaBotonMas.add(jb_masCero);
                     listaIndices.add(jl_indiceCero);
                     listaBarras.add(jpb_porcentajeCero);
-                    
+
                 } else {
 
                     // Indices
@@ -704,7 +709,7 @@ public class JF_Principal extends javax.swing.JFrame {
 
                     // Colaboraciones
                     JLabel labelColaboraciones = new JLabel(String.format("%02d", colaborador.getNumeroColaboraciones()), SwingConstants.TRAILING);
-                    
+
                     jp_colaboradores.add(labelColaboraciones);
                     labelColaboraciones.setBounds(colaboracionesX, yDezplazar, jl_colaboracionesCero.getWidth(), jl_colaboracionesCero.getHeight());
                     labelColaboraciones.setOpaque(true);
@@ -736,25 +741,25 @@ public class JF_Principal extends javax.swing.JFrame {
                     jp_colaboradores.add(barra);
                     listaBarras.add(barra);
                 }
-                
+
                 iterador++;
             }
         } else {
             System.out.println("El archivo no existe.");
         }
-        
+
         jp_colaboradores.revalidate();
         jp_colaboradores.repaint();
     }
-    
+
     public static boolean esPar(int numero) {
         return numero % 2 == 0;
     }
-    
+
     public ArrayList<Colaborador> convStringAArrayList(String cadena) {
         ArrayList<Colaborador> listaColaboradores = new ArrayList<>();
         String[] arreglo = cadena.split("\n");
-        
+
         for (String string : arreglo) {
             try {
                 String[] colaboradorString = string.split(";");
@@ -771,7 +776,7 @@ public class JF_Principal extends javax.swing.JFrame {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, "Error procesando la línea: " + string, ex);
             }
         }
-        
+
         return listaColaboradores;
     }
 
@@ -845,7 +850,7 @@ public class JF_Principal extends javax.swing.JFrame {
 
     //suma 1 ejecucion a la estadistica
     public void actualizarEstadisticaEjecucion() {
-        
+
         try {
             String ejecucionActual = adminEjecucion.leerArchivo().split("\n")[0];
             System.out.println(ejecucionActual);
@@ -856,23 +861,23 @@ public class JF_Principal extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
     //usar en estadisticas
     public String llenarSeisCifras(int valor) {
         String valorString = Integer.toString(valor);
-        
+
         while (valorString.length() < 6) {
             valorString = "0".concat(valorString);
         }
         return valorString;
-        
+
     }
-    
+
     public void establecerEstadisticas() {
         adminEjecucion.escribirArchivo(jl_stats_ejecucion.getText());
-        
+
     }
 
     /**
