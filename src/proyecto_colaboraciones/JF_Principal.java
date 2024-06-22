@@ -5,6 +5,8 @@
 package proyecto_colaboraciones;
 
 import java.awt.Color;
+import java.io.File;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -19,7 +21,7 @@ public class JF_Principal extends javax.swing.JFrame {
      */
     public JF_Principal() {
         initComponents();
-        
+        actualizarComboBoxConArchivos(cb_archivo);
         actualizarEstadisticaEjecucion();
     }
 
@@ -606,6 +608,27 @@ public class JF_Principal extends javax.swing.JFrame {
         jd_dialogAcerca.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    
+     public static void actualizarComboBoxConArchivos(JComboBox<String> comboBox) {
+        // Obtener el directorio raíz
+        File directorioRaiz = new File("./");
+
+        // Filtrar los archivos que comienzan con "colaboradores_"
+        File[] archivos = directorioRaiz.listFiles((dir, name) -> name.startsWith("colaboradores_"));
+
+        // Limpiar el JComboBox
+        comboBox.removeAllItems();
+
+        // Agregar los nombres de los archivos al JComboBox
+        if (archivos != null) {
+            for (File archivo : archivos) {
+                comboBox.addItem(archivo.getName());
+            }
+        } else {
+            comboBox.addItem("No se encontraron archivos");
+        }
+    }
+    
     //suma 1 ejecucion a la estadistica
     public void actualizarEstadisticaEjecucion() {
 
@@ -622,6 +645,7 @@ public class JF_Principal extends javax.swing.JFrame {
 
     }
 
+    //usar en estadisticas
     public String llenarSeisCifras(int valor) {
         String valorString = Integer.toString(valor);
 
