@@ -511,20 +511,20 @@
                           <Component id="jl_colaboracionesClicleable" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jl_masCero" alignment="3" pref="0" max="32767" attributes="0"/>
+                          <Component id="jl_masCero" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jl_colaboracionesCero" alignment="0" max="32767" attributes="0"/>
                               <Component id="jb_menosCero" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jl_indiceCero" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jl_nombreCero" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="pb_porcentajeCero" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jl_indiceCero" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jl_nombreCero" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="pb_porcentajeCero" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="492" max="32767" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
