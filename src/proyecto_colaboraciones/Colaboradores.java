@@ -19,6 +19,10 @@ public class Colaboradores implements Serializable {
     public Colaboradores() {
     }
 
+    public Colaboradores(ArrayList<Colaborador> colaboradores) {
+        this.colaboradores = colaboradores;
+    }
+
     //añadirle un colaborador a la lista
     public void adicionar(Colaborador colaborador) { //añadir un colaborador 
         colaboradores.add(colaborador);

@@ -5,7 +5,11 @@
 package proyecto_colaboraciones;
 
 import java.awt.Color;
+import java.awt.event.ItemEvent;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -367,6 +371,16 @@ public class JF_Principal extends javax.swing.JFrame {
         jLabel2.setText("Colaboradores");
 
         cb_archivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_archivo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_archivoItemStateChanged(evt);
+            }
+        });
+        cb_archivo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                cb_archivoPropertyChange(evt);
+            }
+        });
 
         jb_buscarAleatorio.setText("BUSCAR");
 
@@ -608,8 +622,126 @@ public class JF_Principal extends javax.swing.JFrame {
         jd_dialogAcerca.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void cb_archivoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cb_archivoPropertyChange
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_cb_archivoPropertyChange
+
+    private void cb_archivoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_archivoItemStateChanged
+        // TODO add your handling code here:
+
+        //en deselected guardare todo los cambios hechos al archivo deselected
+        if (evt.getStateChange() == ItemEvent.DESELECTED
+                && !evt.getItem().equals("Item 1")) {  //valida el evt no se ejecute antes de cargar los datos correctos al combo box
+
+            System.out.println("Deselected:" + evt.getItem());
+
+        }
+
+        //en selected cargare todos los datos del nuevo archivo
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            System.out.println("Selected: " + evt.getItem());
+            llenarPanelColaboradores((String) evt.getItem());
+        }
+    }//GEN-LAST:event_cb_archivoItemStateChanged
+
     
-     public static void actualizarComboBoxConArchivos(JComboBox<String> comboBox) {
+    
+    
+    
+    
+    public void llenarPanelColaboradores(String nombreArchivo) {
+        ManejoArchivosTexto adminTextoPrincipal = new ManejoArchivosTexto("./".concat(nombreArchivo));
+
+        if (adminTextoPrincipal.existeArchivo()) {
+            ArrayList<Colaborador> listaColaboradores = convStringAArrayList(adminTextoPrincipal.leerArchivo());
+            for (Colaborador colaborador : listaColaboradores) {
+                System.out.println(colaborador.toString());
+            }
+        } else {
+            System.out.println("El archivo no existe.");
+        }
+    }
+
+    public ArrayList<Colaborador> convStringAArrayList(String cadena) {
+        ArrayList<Colaborador> listaColaboradores = new ArrayList<>();
+        String[] arreglo = cadena.split("\n");
+
+        for (String string : arreglo) {
+            try {
+                String[] colaboradorString = string.split(";");
+                if (colaboradorString.length == 2) {
+                    String nombre = colaboradorString[0];
+                    int numeroColaboraciones = Integer.parseInt(colaboradorString[1]);
+                    Colaborador nuevoColaborador = new Colaborador(nombre, numeroColaboraciones);
+                    listaColaboradores.add(nuevoColaborador);
+                } else {
+                    throw new Exception("Formato de línea incorrecto: " + string);
+                }
+            } catch (Exception ex) {
+              ex.printStackTrace();
+               //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, "Error procesando la línea: " + string, ex);
+            }
+        }
+
+        return listaColaboradores;
+    }
+    
+    
+    
+    
+    
+    
+    /*
+    public void llenarPanelColaboradores(String nombreArchivo) {
+        ManejoArchivosTexto adminTextoPrincipal = new ManejoArchivosTexto("./".concat(nombreArchivo));
+
+        System.out.println(adminTextoPrincipal.existeArchivo());
+
+        ArrayList<Colaborador> listaColaboradores = convStringAArrayList(adminTextoPrincipal.leerArchivo());
+
+    }
+
+    public ArrayList<Colaborador> convStringAArrayList(String cadena) {
+        ArrayList<String> listaString = new ArrayList<>();
+        ArrayList<Colaborador> listaColaboradores = new ArrayList<>();
+
+        String[] arreglo = cadena.split("\n");
+
+//        for (String string : arreglo) {
+//            System.out.println("Arreglo"+string);
+//            listaString.add(string);
+//        }
+        for (String string : arreglo) {
+            try {
+                String[] colaboradorString = string.split(";");
+                Colaborador nuevoColaborador = new Colaborador();  // Crear un nuevo objeto para cada iteración
+                nuevoColaborador.setNombre(colaboradorString[0]);
+                nuevoColaborador.setNumeroColaboraciones(Integer.parseInt(colaboradorString[1]));
+                listaColaboradores.add(nuevoColaborador);  // Agregar el nuevo objeto a la lista
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+
+//        for (String string : listaString) {
+//            try {
+//                String[] colaboradorString = string.split(";");
+//                nuevoColaborador.setNombre(colaboradorString[0]);
+//                nuevoColaborador.setNumeroColaboraciones(Integer.parseInt(colaboradorString[1]));
+//            } catch (Exception ex) {
+//                Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+
+        for (Colaborador listaColaboradore : listaColaboradores) {
+            System.out.println(listaColaboradore.toString());
+        }
+        return listaColaboradores;
+    }
+*/
+    public static void actualizarComboBoxConArchivos(JComboBox<String> comboBox) {
         // Obtener el directorio raíz
         File directorioRaiz = new File("./");
 
@@ -628,7 +760,7 @@ public class JF_Principal extends javax.swing.JFrame {
             comboBox.addItem("No se encontraron archivos");
         }
     }
-    
+
     //suma 1 ejecucion a la estadistica
     public void actualizarEstadisticaEjecucion() {
 
@@ -746,5 +878,5 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jp_stats;
     private javax.swing.JProgressBar pb_porcentajeCero;
     // End of variables declaration//GEN-END:variables
-ManejoArchivosTexto adminEjecucion = new ManejoArchivosTexto("./ejecucion.txt");
+    ManejoArchivosTexto adminEjecucion = new ManejoArchivosTexto("./ejecucion.txt");
 }

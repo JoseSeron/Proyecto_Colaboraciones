@@ -9,12 +9,12 @@ import java.io.Serializable;
 public class Colaborador implements Serializable {
 
     private String nombre;
-    private String apellido;
+
     private int numeroColaboraciones;
 
-    public Colaborador(String nombre, String apellido, int numeroColaboraciones) throws Exception {
+    public Colaborador(String nombre, int numeroColaboraciones) throws Exception {
         this.nombre = nombre;
-        this.apellido = apellido;
+
         setNumeroColaboraciones(numeroColaboraciones);
     }
 
@@ -33,19 +33,6 @@ public class Colaborador implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) throws Exception {
-        if (apellido.isBlank() || apellido.isEmpty()) {
-            throw new Exception("Apellido no puede ser blank o nulo");
-        } else {
-            this.apellido = apellido;
-
-        }
-    }
-
     public int getNumeroColaboraciones() {
         return numeroColaboraciones;
     }
@@ -60,7 +47,7 @@ public class Colaborador implements Serializable {
 
     @Override
     public String toString() {
-        return "Colaborador( " + nombre + " " + apellido + " ; Colaboraciones: " + numeroColaboraciones + " )";
+        return "Nombre: " + nombre + " Colaboraciones: " + numeroColaboraciones;
     }
 
 }
