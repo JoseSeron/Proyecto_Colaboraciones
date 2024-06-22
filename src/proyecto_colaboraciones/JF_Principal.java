@@ -19,6 +19,8 @@ public class JF_Principal extends javax.swing.JFrame {
      */
     public JF_Principal() {
         initComponents();
+        
+        actualizarEstadisticaEjecucion();
     }
 
     /**
@@ -83,7 +85,7 @@ public class JF_Principal extends javax.swing.JFrame {
         jd_dialogAcerca.setMinimumSize(new java.awt.Dimension(830, 590));
         jd_dialogAcerca.setModal(true);
         jd_dialogAcerca.setPreferredSize(new java.awt.Dimension(830, 590));
-        jd_dialogAcerca.setSize(new java.awt.Dimension(820, 590));
+        jd_dialogAcerca.setSize(new java.awt.Dimension(830, 590));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -489,12 +491,12 @@ public class JF_Principal extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jl_masCero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jl_colaboracionesCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jb_menosCero, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jp_colaboradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jl_indiceCero)
                         .addComponent(jl_nombreCero))
-                    .addComponent(pb_porcentajeCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pb_porcentajeCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jl_colaboracionesCero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 492, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(34, 34, 34))
@@ -604,6 +606,37 @@ public class JF_Principal extends javax.swing.JFrame {
         jd_dialogAcerca.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //suma 1 ejecucion a la estadistica
+    public void actualizarEstadisticaEjecucion() {
+
+        try {
+            String ejecucionActual = adminEjecucion.leerArchivo().split("\n")[0];
+            System.out.println(ejecucionActual);
+            int ejecucionNueva = Integer.parseInt(ejecucionActual);
+            ejecucionNueva++;
+            adminEjecucion.escribirArchivo(llenarSeisCifras(ejecucionNueva));
+            jl_stats_ejecucion.setText(llenarSeisCifras(ejecucionNueva));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public String llenarSeisCifras(int valor) {
+        String valorString = Integer.toString(valor);
+
+        while (valorString.length() < 6) {
+            valorString = "0".concat(valorString);
+        }
+        return valorString;
+
+    }
+
+    public void establecerEstadisticas() {
+        adminEjecucion.escribirArchivo(jl_stats_ejecucion.getText());
+
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -689,4 +722,5 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jp_stats;
     private javax.swing.JProgressBar pb_porcentajeCero;
     // End of variables declaration//GEN-END:variables
+ManejoArchivosTexto adminEjecucion = new ManejoArchivosTexto("./ejecucion.txt");
 }

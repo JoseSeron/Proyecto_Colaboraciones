@@ -15,7 +15,7 @@
           <Dimension value="[830, 590]"/>
         </Property>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[820, 590]"/>
+          <Dimension value="[830, 590]"/>
         </Property>
       </Properties>
 
@@ -680,13 +680,13 @@
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jl_masCero" pref="0" max="32767" attributes="0"/>
-                          <Component id="jl_colaboracionesCero" alignment="0" max="32767" attributes="0"/>
                           <Component id="jb_menosCero" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jl_indiceCero" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jl_nombreCero" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="pb_porcentajeCero" max="32767" attributes="0"/>
+                          <Component id="jl_colaboracionesCero" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="492" max="32767" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
