@@ -577,6 +577,11 @@ public class JF_Principal extends javax.swing.JFrame {
         jl_colaboracionesClicleable.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_colaboracionesClicleable.setText("COLABORACIONES (Clic para actualizar)");
         jl_colaboracionesClicleable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jl_colaboracionesClicleable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_colaboracionesClicleableMouseClicked(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -798,7 +803,7 @@ public class JF_Principal extends javax.swing.JFrame {
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             System.out.println("Selected: " + evt.getItem());
             try {
-                llenarPanelColaboradores((String) evt.getItem());
+                llenarPanelColaboradores((String) evt.getItem(), false);
 
             } catch (Exception ex) {
                 Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -917,9 +922,9 @@ public class JF_Principal extends javax.swing.JFrame {
             }
             ManejoArchivosTexto adminArchivo = new ManejoArchivosTexto((String) cb_archivo.getSelectedItem());
             adminArchivo.agregarAlArchivo(nombre + ";" + colaboraciones);
-            
+
             try {
-                llenarPanelColaboradores(adminArchivo.obtenerNombreArchivo());
+                llenarPanelColaboradores(adminArchivo.obtenerNombreArchivo(), false);
             } catch (Exception ex) {
                 Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -949,16 +954,35 @@ public class JF_Principal extends javax.swing.JFrame {
         jtf_crudColaboraciones.setText("");
         jtf_crudNombre.setText("");
 
-        
 
     }//GEN-LAST:event_jb_nuevaFilaAceptarActionPerformed
+
+    private void jl_colaboracionesClicleableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_colaboracionesClicleableMouseClicked
+        try {
+               for (JLabel label : listaIndices) {
+                if (listaIndices.indexOf(label) != 0) {
+                    jp_colaboradores.remove(label);
+                    jp_colaboradores.remove(listaNombres.get(listaIndices.indexOf(label)));
+                    jp_colaboradores.remove(listaBotonMenos.get(listaIndices.indexOf(label)));
+                    jp_colaboradores.remove(listaColaboraciones.get(listaIndices.indexOf(label)));
+                    jp_colaboradores.remove(listaBotonMas.get(listaIndices.indexOf(label)));
+                    jp_colaboradores.remove(listaBarras.get(listaIndices.indexOf(label)));
+
+                }
+
+            }
+            llenarPanelColaboradores((String) cb_archivo.getSelectedItem(), true);
+        } catch (Exception ex) {
+            Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jl_colaboracionesClicleableMouseClicked
 
     public void actualizarContFilas(ArrayList<Colaborador> lista) {
         jl_crudFilas.setText(String.format("%02d Filas", lista.size()));
 
     }
 
-    public void llenarPanelColaboradores(String nombreArchivo) throws Exception {
+    public void llenarPanelColaboradores(String nombreArchivo, boolean ordenar) throws Exception {
 
         jl_nombreCero.setVisible(true);
         jl_indiceCero.setVisible(true);
@@ -989,7 +1013,10 @@ public class JF_Principal extends javax.swing.JFrame {
                 ArrayList<Colaborador> listaColaboradores = convStringAArrayList(adminTextoPrincipal.leerArchivo());
                 adminColaboradores = new Colaboradores(listaColaboradores);
 
-                //adminColaboradores.ordernar();
+                if (ordenar) {
+                    adminColaboradores.ordernar();
+                }
+
                 //posiciones
                 int indiceX = jl_indiceCero.getX();
                 int nombreX = jl_nombreCero.getX();
