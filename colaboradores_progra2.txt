@@ -11,3 +11,4 @@ PARTICIPANTE #10;0
 Paula Hernandez;0
 PARTICIPANTE #12;0
 Santos Seron;0
+Mabian Medina;25

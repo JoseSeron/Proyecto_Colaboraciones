@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
@@ -57,9 +58,11 @@ public class JF_Principal extends javax.swing.JFrame {
         jb_crudCrearNuevaFila = new javax.swing.JButton();
         jp_crearNuevaFila = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jb_nuevaFilaCancelar = new javax.swing.JButton();
+        jb_nuevaFilaAceptar = new javax.swing.JButton();
+        jtf_crudNombre = new javax.swing.JTextField();
+        jtf_crudColaboraciones = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jl_crudFilas = new javax.swing.JLabel();
         jp_fondo = new javax.swing.JPanel();
         jp_stats = new javax.swing.JPanel();
@@ -192,10 +195,14 @@ public class JF_Principal extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jd_crud.setMaximumSize(new java.awt.Dimension(900, 700));
-        jd_crud.setMinimumSize(new java.awt.Dimension(900, 700));
-        jd_crud.setPreferredSize(new java.awt.Dimension(900, 700));
-        jd_crud.setSize(new java.awt.Dimension(900, 700));
+        jd_crud.setMaximumSize(new java.awt.Dimension(1000, 700));
+        jd_crud.setMinimumSize(new java.awt.Dimension(1000, 700));
+        jd_crud.setPreferredSize(new java.awt.Dimension(1000, 700));
+        jd_crud.setSize(new java.awt.Dimension(1000, 700));
+
+        jScrollPane2.setMaximumSize(new java.awt.Dimension(790, 540));
+        jScrollPane2.setMinimumSize(new java.awt.Dimension(790, 540));
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(790, 540));
 
         jt_crue.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -228,15 +235,33 @@ public class JF_Principal extends javax.swing.JFrame {
         jb_crudModificarFila.setText("Modificar Fila");
 
         jb_crudCrearNuevaFila.setText("Crear nueva fila");
+        jb_crudCrearNuevaFila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_crudCrearNuevaFilaActionPerformed(evt);
+            }
+        });
 
         jp_crearNuevaFila.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText("Nombre:");
 
-        jButton1.setText("Cancelar");
+        jb_nuevaFilaCancelar.setText("Cancelar");
+        jb_nuevaFilaCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_nuevaFilaCancelarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Aceptar");
+        jb_nuevaFilaAceptar.setText("Aceptar");
+        jb_nuevaFilaAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_nuevaFilaAceptarActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setText("Colaboraciones:");
 
         javax.swing.GroupLayout jp_crearNuevaFilaLayout = new javax.swing.GroupLayout(jp_crearNuevaFila);
         jp_crearNuevaFila.setLayout(jp_crearNuevaFilaLayout);
@@ -245,11 +270,15 @@ public class JF_Principal extends javax.swing.JFrame {
             .addGroup(jp_crearNuevaFilaLayout.createSequentialGroup()
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(jtf_crudNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jtf_crudColaboraciones, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(jb_nuevaFilaAceptar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_nuevaFilaCancelar)
                 .addContainerGap())
         );
         jp_crearNuevaFilaLayout.setVerticalGroup(
@@ -258,9 +287,12 @@ public class JF_Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jp_crearNuevaFilaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_nuevaFilaCancelar)
+                    .addComponent(jb_nuevaFilaAceptar)
+                    .addComponent(jtf_crudNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jp_crearNuevaFilaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel13)
+                        .addComponent(jtf_crudColaboraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -272,13 +304,13 @@ public class JF_Principal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jp_crearNuevaFila, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_crearNuevaFila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 25, Short.MAX_VALUE)
+                        .addGap(0, 16, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jb_crudEliminarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jb_crudModificarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,12 +331,15 @@ public class JF_Principal extends javax.swing.JFrame {
                         .addComponent(jb_crudEliminarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jp_crearNuevaFila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_crudFilas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jl_crudFilas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jp_crearNuevaFila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jd_crudLayout = new javax.swing.GroupLayout(jd_crud.getContentPane());
@@ -756,13 +791,6 @@ public class JF_Principal extends javax.swing.JFrame {
                 }
 
             }
-//               listaNombres.clear();
-//                    listaBotonMenos.clear();
-//                    listaColaboraciones.clear();
-//                    listaBotonMas.clear();
-//                    listaIndices.clear();
-//                    listaBarras.clear();
-     
 
         }
 
@@ -812,16 +840,25 @@ public class JF_Principal extends javax.swing.JFrame {
 
     private void jmi_colaboradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_colaboradoresActionPerformed
         // TODO add your handling code here:
+        actualizarContFilas(adminColaboradores.getColaboradores());
         jd_crud.setLocationRelativeTo(jp_fondo);
         jd_crud.setModal(true);
         jd_crud.setTitle("Adminstración de Colaboradores");
         jp_crearNuevaFila.setVisible(true);
         jb_crudModificarFila.setEnabled(true);
         jb_crudEliminarFila.setEnabled(true);
+
         if (adminColaboradores.tamanio() == 0) {
             jp_crearNuevaFila.setVisible(false);
+            jb_crudCrearNuevaFila.setEnabled(true);
             jb_crudModificarFila.setEnabled(false);
             jb_crudEliminarFila.setEnabled(false);
+        } else if (adminColaboradores.tamanio() == 40) {
+            jb_crudCrearNuevaFila.setEnabled(false);
+            jp_crearNuevaFila.setVisible(false);
+        } else {
+            jp_crearNuevaFila.setVisible(false);
+            jb_crudCrearNuevaFila.setEnabled(true);
         }
 
         DefaultTableModel modeloTabla = (DefaultTableModel) jt_crue.getModel();
@@ -838,6 +875,88 @@ public class JF_Principal extends javax.swing.JFrame {
 
         jd_crud.setVisible(true);
     }//GEN-LAST:event_jmi_colaboradoresActionPerformed
+
+    private void jb_crudCrearNuevaFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crudCrearNuevaFilaActionPerformed
+        // TODO add your handling code here:
+
+        if (adminColaboradores.tamanio() != 40) {
+            jb_crudCrearNuevaFila.setEnabled(true);
+            jp_crearNuevaFila.setVisible(true);
+            jb_crudCrearNuevaFila.setEnabled(false);
+            jb_crudEliminarFila.setEnabled(false);
+            jb_crudModificarFila.setEnabled(false);
+
+        }
+
+    }//GEN-LAST:event_jb_crudCrearNuevaFilaActionPerformed
+
+    private void jb_nuevaFilaCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_nuevaFilaCancelarActionPerformed
+        jp_crearNuevaFila.setVisible(false);
+        jtf_crudColaboraciones.setText("");
+        jtf_crudNombre.setText("");
+        jb_crudCrearNuevaFila.setEnabled(true);
+        jb_crudEliminarFila.setEnabled(true);
+        jb_crudModificarFila.setEnabled(true);
+
+    }//GEN-LAST:event_jb_nuevaFilaCancelarActionPerformed
+
+    private void jb_nuevaFilaAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_nuevaFilaAceptarActionPerformed
+        // TODO add your handling code here:
+
+        if (!jtf_crudColaboraciones.getText().isEmpty()
+                || !jtf_crudNombre.getText().isEmpty()) {
+            String nombre = jtf_crudNombre.getText();
+            String colaboraciones = jtf_crudColaboraciones.getText();
+
+            try {
+                adminColaboradores.adicionar(new Colaborador(nombre, Integer.parseInt(colaboraciones)));
+
+            } catch (Exception ex) {
+                Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
+            }
+            ManejoArchivosTexto adminArchivo = new ManejoArchivosTexto((String) cb_archivo.getSelectedItem());
+            adminArchivo.agregarAlArchivo(nombre + ";" + colaboraciones);
+            
+            try {
+                llenarPanelColaboradores(adminArchivo.obtenerNombreArchivo());
+            } catch (Exception ex) {
+                Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            if (Integer.parseInt(jtf_crudColaboraciones.getText()) > 40
+                    || Integer.parseInt(jtf_crudColaboraciones.getText()) < 0) {
+                JOptionPane.showMessageDialog(this, "Colaboraciones deber ser un numero entre 0 y 40");
+
+            }
+            JOptionPane.showMessageDialog(this, "Llenar todos los campos.");
+
+        }
+
+        DefaultTableModel modeloTabla = (DefaultTableModel) jt_crue.getModel();
+        modeloTabla.setRowCount(0);
+        for (Colaborador colaborador : adminColaboradores.getColaboradores()) {
+            Object[] fila = new Object[2];
+            fila[0] = colaborador.getNombre();
+            fila[1] = String.format("%02d", colaborador.getNumeroColaboraciones());
+            modeloTabla.addRow(fila);
+            System.out.println("modelo");
+        }
+        jt_crue.setModel(modeloTabla);
+        actualizarContFilas(adminColaboradores.getColaboradores());
+
+        jtf_crudColaboraciones.setText("");
+        jtf_crudNombre.setText("");
+
+        
+
+    }//GEN-LAST:event_jb_nuevaFilaAceptarActionPerformed
+
+    public void actualizarContFilas(ArrayList<Colaborador> lista) {
+        jl_crudFilas.setText(String.format("%02d Filas", lista.size()));
+
+    }
 
     public void llenarPanelColaboradores(String nombreArchivo) throws Exception {
 
@@ -1014,7 +1133,6 @@ public class JF_Principal extends javax.swing.JFrame {
         return listaColaboradores;
     }
 
-
     public static void actualizarComboBoxConArchivos(JComboBox<String> comboBox) {
         // Obtener el directorio raíz
         File directorioRaiz = new File("./");
@@ -1106,13 +1224,12 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu Ayuda;
     private javax.swing.JComboBox<String> cb_archivo;
     private javax.swing.JComboBox<String> cb_modos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1132,13 +1249,14 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jb_buscarAleatorio;
     private javax.swing.JButton jb_crudCrearNuevaFila;
     private javax.swing.JButton jb_crudEliminarFila;
     private javax.swing.JButton jb_crudModificarFila;
     private javax.swing.JButton jb_masCero;
     private javax.swing.JButton jb_menosCero;
+    private javax.swing.JButton jb_nuevaFilaAceptar;
+    private javax.swing.JButton jb_nuevaFilaCancelar;
     private javax.swing.JDialog jd_crud;
     private javax.swing.JDialog jd_dialogAcerca;
     private javax.swing.JLabel jl_colaboracionesCero;
@@ -1163,6 +1281,8 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jp_stats;
     private javax.swing.JProgressBar jpb_porcentajeCero;
     private javax.swing.JTable jt_crue;
+    private javax.swing.JTextField jtf_crudColaboraciones;
+    private javax.swing.JTextField jtf_crudNombre;
     // End of variables declaration//GEN-END:variables
     ManejoArchivosTexto adminEjecucion = new ManejoArchivosTexto("./ejecucion.txt");
     Colaboradores adminColaboradores;
