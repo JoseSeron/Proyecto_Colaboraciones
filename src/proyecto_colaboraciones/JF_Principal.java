@@ -13,6 +13,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -47,6 +48,19 @@ public class JF_Principal extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel11 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jd_crud = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_crue = new javax.swing.JTable();
+        jb_crudEliminarFila = new javax.swing.JButton();
+        jb_crudModificarFila = new javax.swing.JButton();
+        jb_crudCrearNuevaFila = new javax.swing.JButton();
+        jp_crearNuevaFila = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jl_crudFilas = new javax.swing.JLabel();
         jp_fondo = new javax.swing.JPanel();
         jp_stats = new javax.swing.JPanel();
         jp_estadisticas_utilizado = new javax.swing.JPanel();
@@ -176,6 +190,132 @@ public class JF_Principal extends javax.swing.JFrame {
         jd_dialogAcercaLayout.setVerticalGroup(
             jd_dialogAcercaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jd_crud.setMaximumSize(new java.awt.Dimension(900, 700));
+        jd_crud.setMinimumSize(new java.awt.Dimension(900, 700));
+        jd_crud.setPreferredSize(new java.awt.Dimension(900, 700));
+        jd_crud.setSize(new java.awt.Dimension(900, 700));
+
+        jt_crue.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nombre", "Colaboraciones"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jt_crue);
+
+        jb_crudEliminarFila.setText("Eliminar Fila");
+
+        jb_crudModificarFila.setText("Modificar Fila");
+
+        jb_crudCrearNuevaFila.setText("Crear nueva fila");
+
+        jp_crearNuevaFila.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setText("Nombre:");
+
+        jButton1.setText("Cancelar");
+
+        jButton3.setText("Aceptar");
+
+        javax.swing.GroupLayout jp_crearNuevaFilaLayout = new javax.swing.GroupLayout(jp_crearNuevaFila);
+        jp_crearNuevaFila.setLayout(jp_crearNuevaFilaLayout);
+        jp_crearNuevaFilaLayout.setHorizontalGroup(
+            jp_crearNuevaFilaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_crearNuevaFilaLayout.createSequentialGroup()
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+        jp_crearNuevaFilaLayout.setVerticalGroup(
+            jp_crearNuevaFilaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_crearNuevaFilaLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jp_crearNuevaFilaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jl_crudFilas.setText("Filas");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jp_crearNuevaFila, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 25, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_crudEliminarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_crudModificarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_crudCrearNuevaFila, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jl_crudFilas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jb_crudCrearNuevaFila, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jb_crudModificarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jb_crudEliminarFila, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jp_crearNuevaFila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_crudFilas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jd_crudLayout = new javax.swing.GroupLayout(jd_crud.getContentPane());
+        jd_crud.getContentPane().setLayout(jd_crudLayout);
+        jd_crudLayout.setHorizontalGroup(
+            jd_crudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_crudLayout.setVerticalGroup(
+            jd_crudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -435,6 +575,9 @@ public class JF_Principal extends javax.swing.JFrame {
         jl_colaboracionesCero.setMinimumSize(new java.awt.Dimension(12, 13));
         jl_colaboracionesCero.setOpaque(true);
 
+        jpb_porcentajeCero.setValue(50);
+        jpb_porcentajeCero.setStringPainted(true);
+
         javax.swing.GroupLayout jp_colaboradoresLayout = new javax.swing.GroupLayout(jp_colaboradores);
         jp_colaboradores.setLayout(jp_colaboradoresLayout);
         jp_colaboradoresLayout.setHorizontalGroup(
@@ -530,8 +673,18 @@ public class JF_Principal extends javax.swing.JFrame {
         );
 
         jm_administracion.setText("Administración");
+        jm_administracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_administracionActionPerformed(evt);
+            }
+        });
 
         jmi_colaboradores.setText("Colaboradores");
+        jmi_colaboradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_colaboradoresActionPerformed(evt);
+            }
+        });
         jm_administracion.add(jmi_colaboradores);
 
         jMenuBar1.add(jm_administracion);
@@ -603,13 +756,25 @@ public class JF_Principal extends javax.swing.JFrame {
                 }
 
             }
+//               listaNombres.clear();
+//                    listaBotonMenos.clear();
+//                    listaColaboraciones.clear();
+//                    listaBotonMas.clear();
+//                    listaIndices.clear();
+//                    listaBarras.clear();
+     
 
         }
 
-        //en selected cargare todos los datos del nuevo archivo
+        //en selected cargar todos los datos del nuevo archivo
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             System.out.println("Selected: " + evt.getItem());
-            llenarPanelColaboradores((String) evt.getItem());
+            try {
+                llenarPanelColaboradores((String) evt.getItem());
+
+            } catch (Exception ex) {
+                Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             ActionListener listenerBotonMenos = new ActionListener() {
                 @Override
@@ -618,134 +783,203 @@ public class JF_Principal extends javax.swing.JFrame {
                     System.out.println("Has hecho clic en " + boton.getText());
                 }
             };
-            
-                       ActionListener listenerBotonMas = new ActionListener() {
+
+            ActionListener listenerBotonMas = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     JButton boton = (JButton) e.getSource();
                     System.out.println("Has hecho clic en " + boton.getText());
                 }
             };
-            
+
             //añadir listener a los botones
             for (JButton boton : listaBotonMenos) {
                 boton.addActionListener(listenerBotonMenos);
-                
+
             }
-            
+
             for (JButton boton : listaBotonMas) {
                 boton.addActionListener(listenerBotonMas);
             }
-            
-
+            jp_colaboradores.repaint();
         }
     }//GEN-LAST:event_cb_archivoItemStateChanged
 
-    public void llenarPanelColaboradores(String nombreArchivo) {
+    private void jm_administracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_administracionActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jm_administracionActionPerformed
+
+    private void jmi_colaboradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_colaboradoresActionPerformed
+        // TODO add your handling code here:
+        jd_crud.setLocationRelativeTo(jp_fondo);
+        jd_crud.setModal(true);
+        jd_crud.setTitle("Adminstración de Colaboradores");
+        jp_crearNuevaFila.setVisible(true);
+        jb_crudModificarFila.setEnabled(true);
+        jb_crudEliminarFila.setEnabled(true);
+        if (adminColaboradores.tamanio() == 0) {
+            jp_crearNuevaFila.setVisible(false);
+            jb_crudModificarFila.setEnabled(false);
+            jb_crudEliminarFila.setEnabled(false);
+        }
+
+        DefaultTableModel modeloTabla = (DefaultTableModel) jt_crue.getModel();
+        modeloTabla.setRowCount(0);
+        for (Colaborador colaborador : adminColaboradores.getColaboradores()) {
+            Object[] fila = new Object[2];
+            fila[0] = colaborador.getNombre();
+            fila[1] = String.format("%02d", colaborador.getNumeroColaboraciones());
+            modeloTabla.addRow(fila);
+            System.out.println("modelo");
+        }
+        jt_crue.setModel(modeloTabla);
+        jt_crue.repaint();
+
+        jd_crud.setVisible(true);
+    }//GEN-LAST:event_jmi_colaboradoresActionPerformed
+
+    public void llenarPanelColaboradores(String nombreArchivo) throws Exception {
+
+        jl_nombreCero.setVisible(true);
+        jl_indiceCero.setVisible(true);
+        jl_colaboracionesCero.setVisible(true);
+        jpb_porcentajeCero.setVisible(true);
+        jb_menosCero.setVisible(true);
+        jb_masCero.setVisible(true);
 
         ManejoArchivosTexto adminTextoPrincipal = new ManejoArchivosTexto("./".concat(nombreArchivo));
         int iterador = 0;
         if (adminTextoPrincipal.existeArchivo()) {
-            ArrayList<Colaborador> listaColaboradores = convStringAArrayList(adminTextoPrincipal.leerArchivo());
 
-            //posiciones
-            int indiceX = jl_indiceCero.getX();
-            int nombreX = jl_nombreCero.getX();
-            int botonMasX = jb_masCero.getX();
-            int colaboracionesX = jl_colaboracionesCero.getX();
-            int botonMenosX = jb_menosCero.getX();
-            int barraX = jpb_porcentajeCero.getX();
+            if (adminTextoPrincipal.leerArchivo().isEmpty() || adminTextoPrincipal.leerArchivo().isBlank()) {
+                jl_nombreCero.setVisible(false);
+                jl_indiceCero.setVisible(false);
+                jl_colaboracionesCero.setVisible(false);
+                jpb_porcentajeCero.setVisible(false);
+                jb_menosCero.setVisible(false);
+                jb_masCero.setVisible(false);
+                adminColaboradores = new Colaboradores(new ArrayList<>());
+            } else {
+                listaIndices = new ArrayList();
+                listaNombres = new ArrayList();
+                listaColaboraciones = new ArrayList();
+                listaBotonMenos = new ArrayList();
+                listaBotonMas = new ArrayList();
+                listaBarras = new ArrayList<>();
+                ArrayList<Colaborador> listaColaboradores = convStringAArrayList(adminTextoPrincipal.leerArchivo());
+                adminColaboradores = new Colaboradores(listaColaboradores);
 
-            jl_colaboracionesCero.setSize(jl_colaboracionesCero.getWidth(), jl_indiceCero.getHeight());
+                //adminColaboradores.ordernar();
+                //posiciones
+                int indiceX = jl_indiceCero.getX();
+                int nombreX = jl_nombreCero.getX();
+                int botonMasX = jb_masCero.getX();
+                int colaboracionesX = jl_colaboracionesCero.getX();
+                int botonMenosX = jb_menosCero.getX();
+                int barraX = jpb_porcentajeCero.getX();
 
-            for (Colaborador colaborador : listaColaboradores) {
+                jl_colaboracionesCero.setSize(jl_colaboracionesCero.getWidth(), jl_indiceCero.getHeight());
 
-                int yDezplazar = jl_indiceCero.getY() + (iterador * jl_indiceCero.getHeight());
-                System.out.println(colaborador.toString());
+                for (Colaborador colaborador : listaColaboradores) {
 
-                if (iterador == 0) {
-                    jl_indiceCero.setText(String.format("%02d", iterador + 1));
-                    jl_nombreCero.setText(colaborador.getNombre());
-                    jl_colaboracionesCero.setText(String.format("%02d", colaborador.getNumeroColaboraciones()));
+                    int yDezplazar = jl_indiceCero.getY() + (iterador * jl_indiceCero.getHeight());
+                    System.out.println(colaborador.toString());
 
-                    listaNombres.add(jl_nombreCero);
-                    listaBotonMenos.add(jb_menosCero);
-                    listaColaboraciones.add(jl_colaboracionesCero);
-                    listaBotonMas.add(jb_masCero);
-                    listaIndices.add(jl_indiceCero);
-                    listaBarras.add(jpb_porcentajeCero);
+                    if (iterador == 0) {
+                        jl_indiceCero.setText(String.format("%02d", iterador + 1));
+                        jl_nombreCero.setText(colaborador.getNombre());
+                        jl_colaboracionesCero.setText(String.format("%02d", colaborador.getNumeroColaboraciones()));
 
-                } else {
+                        jpb_porcentajeCero.setMaximum(adminColaboradores.maximo().getNumeroColaboraciones());
+                        jpb_porcentajeCero.setMinimum(adminColaboradores.minimo().getNumeroColaboraciones());
+                        jpb_porcentajeCero.setString(Integer.toString(colaborador.getNumeroColaboraciones()));
+                        jpb_porcentajeCero.setValue(colaborador.getNumeroColaboraciones());
+                        listaNombres.add(jl_nombreCero);
+                        listaBotonMenos.add(jb_menosCero);
+                        listaColaboraciones.add(jl_colaboracionesCero);
+                        listaBotonMas.add(jb_masCero);
+                        listaIndices.add(jl_indiceCero);
+                        listaBarras.add(jpb_porcentajeCero);
 
-                    // Indices
-                    JLabel label = new JLabel(String.format("%02d", iterador + 1), SwingConstants.TRAILING);
-                    jp_colaboradores.add(label);
-                    label.setBounds(indiceX, yDezplazar, jl_indiceCero.getWidth(), jl_indiceCero.getHeight());
-                    label.setOpaque(true);
-                    label.setFont(jl_indiceCero.getFont());
-                    listaIndices.add(label);
-                    if (esPar(iterador + 1)) {
-                        label.setBackground(Color.BLACK);
-                        label.setForeground(Color.WHITE);
                     } else {
-                        label.setBackground(Color.WHITE);
-                        label.setForeground(Color.BLACK);
+
+                        // Indices
+                        JLabel label = new JLabel(String.format("%02d", iterador + 1), SwingConstants.TRAILING);
+                        jp_colaboradores.add(label);
+                        label.setBounds(indiceX, yDezplazar, jl_indiceCero.getWidth(), jl_indiceCero.getHeight());
+                        label.setOpaque(true);
+                        label.setFont(jl_indiceCero.getFont());
+                        listaIndices.add(label);
+                        if (esPar(iterador + 1)) {
+                            label.setBackground(Color.BLACK);
+                            label.setForeground(Color.WHITE);
+                        } else {
+                            label.setBackground(Color.WHITE);
+                            label.setForeground(Color.BLACK);
+                        }
+
+                        // Nombres
+                        JLabel labelNombre = new JLabel(colaborador.getNombre(), SwingConstants.LEADING);
+                        jp_colaboradores.add(labelNombre);
+                        labelNombre.setBounds(nombreX, yDezplazar, jl_nombreCero.getWidth(), jl_nombreCero.getHeight());
+                        labelNombre.setOpaque(true);
+                        labelNombre.setFont(jl_nombreCero.getFont());
+                        listaNombres.add(labelNombre);
+                        if (esPar(iterador + 1)) {
+                            labelNombre.setBackground(Color.BLACK);
+                            labelNombre.setForeground(Color.WHITE);
+                        } else {
+                            labelNombre.setBackground(Color.WHITE);
+                            labelNombre.setForeground(Color.BLACK);
+                        }
+
+                        // Colaboraciones
+                        JLabel labelColaboraciones = new JLabel(String.format("%02d", colaborador.getNumeroColaboraciones()), SwingConstants.TRAILING);
+
+                        jp_colaboradores.add(labelColaboraciones);
+                        labelColaboraciones.setBounds(colaboracionesX, yDezplazar, jl_colaboracionesCero.getWidth(), jl_colaboracionesCero.getHeight());
+                        labelColaboraciones.setOpaque(true);
+                        labelColaboraciones.setFont(jl_indiceCero.getFont());
+                        listaColaboraciones.add(labelColaboraciones);
+                        if (esPar(iterador + 1)) {
+                            labelColaboraciones.setBackground(Color.BLACK);
+                            labelColaboraciones.setForeground(Color.WHITE);
+                        } else {
+                            labelColaboraciones.setBackground(Color.WHITE);
+                            labelColaboraciones.setForeground(Color.BLACK);
+                        }
+
+                        // Boton menos
+                        JButton botonMenos = new JButton("-");
+                        botonMenos.setBounds(botonMenosX, yDezplazar, jb_menosCero.getWidth(), jb_menosCero.getHeight());
+                        jp_colaboradores.add(botonMenos);
+                        listaBotonMenos.add(botonMenos);
+
+                        //Boton Mas
+                        JButton botonMas = new JButton("+");
+                        botonMas.setBounds(botonMasX, yDezplazar, jb_menosCero.getWidth(), jb_menosCero.getHeight());
+                        jp_colaboradores.add(botonMas);
+                        listaBotonMas.add(botonMas);
+
+                        // Progress Bars
+                        JProgressBar barra = new JProgressBar(SwingConstants.HORIZONTAL,
+                                adminColaboradores.minimo().getNumeroColaboraciones(), adminColaboradores.maximo().getNumeroColaboraciones()); //reemplazar 0 y 100 por min y max col
+                        barra.setBounds(barraX, yDezplazar, jpb_porcentajeCero.getWidth(), jpb_porcentajeCero.getHeight());
+                        barra.setStringPainted(true);
+                        barra.setString(Integer.toString(colaborador.getNumeroColaboraciones()));
+                        barra.setValue(colaborador.getNumeroColaboraciones());
+                        //  barra.setMaximum(adminColaboradores.maximo().getNumeroColaboraciones());
+                        // barra.setMinimum(adminColaboradores.minimo().getNumeroColaboraciones());
+                        jp_colaboradores.add(barra);
+                        listaBarras.add(barra);
                     }
 
-                    // Nombres
-                    JLabel labelNombre = new JLabel(colaborador.getNombre(), SwingConstants.LEADING);
-                    jp_colaboradores.add(labelNombre);
-                    labelNombre.setBounds(nombreX, yDezplazar, jl_nombreCero.getWidth(), jl_nombreCero.getHeight());
-                    labelNombre.setOpaque(true);
-                    labelNombre.setFont(jl_nombreCero.getFont());
-                    listaNombres.add(labelNombre);
-                    if (esPar(iterador + 1)) {
-                        labelNombre.setBackground(Color.BLACK);
-                        labelNombre.setForeground(Color.WHITE);
-                    } else {
-                        labelNombre.setBackground(Color.WHITE);
-                        labelNombre.setForeground(Color.BLACK);
-                    }
-
-                    // Colaboraciones
-                    JLabel labelColaboraciones = new JLabel(String.format("%02d", colaborador.getNumeroColaboraciones()), SwingConstants.TRAILING);
-
-                    jp_colaboradores.add(labelColaboraciones);
-                    labelColaboraciones.setBounds(colaboracionesX, yDezplazar, jl_colaboracionesCero.getWidth(), jl_colaboracionesCero.getHeight());
-                    labelColaboraciones.setOpaque(true);
-                    labelColaboraciones.setFont(jl_indiceCero.getFont());
-                    listaColaboraciones.add(labelColaboraciones);
-                    if (esPar(iterador + 1)) {
-                        labelColaboraciones.setBackground(Color.BLACK);
-                        labelColaboraciones.setForeground(Color.WHITE);
-                    } else {
-                        labelColaboraciones.setBackground(Color.WHITE);
-                        labelColaboraciones.setForeground(Color.BLACK);
-                    }
-
-                    // Boton menos
-                    JButton botonMenos = new JButton("-");
-                    botonMenos.setBounds(botonMenosX, yDezplazar, jb_menosCero.getWidth(), jb_menosCero.getHeight());
-                    jp_colaboradores.add(botonMenos);
-                    listaBotonMenos.add(botonMenos);
-
-                    //Boton Mas
-                    JButton botonMas = new JButton("+");
-                    botonMas.setBounds(botonMasX, yDezplazar, jb_menosCero.getWidth(), jb_menosCero.getHeight());
-                    jp_colaboradores.add(botonMas);
-                    listaBotonMas.add(botonMas);
-
-                    // Progress Bars
-                    JProgressBar barra = new JProgressBar(SwingConstants.HORIZONTAL, 0, 100); //reemplazar 0 y 100 por min y max col
-                    barra.setBounds(barraX, yDezplazar, jpb_porcentajeCero.getWidth(), jpb_porcentajeCero.getHeight());
-                    jp_colaboradores.add(barra);
-                    listaBarras.add(barra);
+                    iterador++;
                 }
-
-                iterador++;
             }
         } else {
-            System.out.println("El archivo no existe.");
+            System.out.println("El archivo no existe o esta vacio");
         }
 
         jp_colaboradores.revalidate();
@@ -769,7 +1003,7 @@ public class JF_Principal extends javax.swing.JFrame {
                     Colaborador nuevoColaborador = new Colaborador(nombre, numeroColaboraciones);
                     listaColaboradores.add(nuevoColaborador);
                 } else {
-                    throw new Exception("Formato de línea incorrecto: " + string);
+                    throw new Exception("Formato de línea incorrecto o archivo vacio ");
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -780,54 +1014,7 @@ public class JF_Principal extends javax.swing.JFrame {
         return listaColaboradores;
     }
 
-    /*
-    public void llenarPanelColaboradores(String nombreArchivo) {
-        ManejoArchivosTexto adminTextoPrincipal = new ManejoArchivosTexto("./".concat(nombreArchivo));
 
-        System.out.println(adminTextoPrincipal.existeArchivo());
-
-        ArrayList<Colaborador> listaColaboradores = convStringAArrayList(adminTextoPrincipal.leerArchivo());
-
-    }
-
-    public ArrayList<Colaborador> convStringAArrayList(String cadena) {
-        ArrayList<String> listaString = new ArrayList<>();
-        ArrayList<Colaborador> listaColaboradores = new ArrayList<>();
-
-        String[] arreglo = cadena.split("\n");
-
-//        for (String string : arreglo) {
-//            System.out.println("Arreglo"+string);
-//            listaString.add(string);
-//        }
-        for (String string : arreglo) {
-            try {
-                String[] colaboradorString = string.split(";");
-                Colaborador nuevoColaborador = new Colaborador();  // Crear un nuevo objeto para cada iteración
-                nuevoColaborador.setNombre(colaboradorString[0]);
-                nuevoColaborador.setNumeroColaboraciones(Integer.parseInt(colaboradorString[1]));
-                listaColaboradores.add(nuevoColaborador);  // Agregar el nuevo objeto a la lista
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        }
-
-//        for (String string : listaString) {
-//            try {
-//                String[] colaboradorString = string.split(";");
-//                nuevoColaborador.setNombre(colaboradorString[0]);
-//                nuevoColaborador.setNumeroColaboraciones(Integer.parseInt(colaboradorString[1]));
-//            } catch (Exception ex) {
-//                Logger.getLogger(JF_Principal.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-
-        for (Colaborador listaColaboradore : listaColaboradores) {
-            System.out.println(listaColaboradore.toString());
-        }
-        return listaColaboradores;
-    }
-     */
     public static void actualizarComboBoxConArchivos(JComboBox<String> comboBox) {
         // Obtener el directorio raíz
         File directorioRaiz = new File("./");
@@ -919,10 +1106,13 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu Ayuda;
     private javax.swing.JComboBox<String> cb_archivo;
     private javax.swing.JComboBox<String> cb_modos;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -933,19 +1123,27 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jb_buscarAleatorio;
+    private javax.swing.JButton jb_crudCrearNuevaFila;
+    private javax.swing.JButton jb_crudEliminarFila;
+    private javax.swing.JButton jb_crudModificarFila;
     private javax.swing.JButton jb_masCero;
     private javax.swing.JButton jb_menosCero;
+    private javax.swing.JDialog jd_crud;
     private javax.swing.JDialog jd_dialogAcerca;
     private javax.swing.JLabel jl_colaboracionesCero;
     private javax.swing.JLabel jl_colaboracionesClicleable;
+    private javax.swing.JLabel jl_crudFilas;
     private javax.swing.JLabel jl_indiceCero;
     private javax.swing.JLabel jl_nombreCero;
     private javax.swing.JLabel jl_stats_ejecucion;
@@ -956,6 +1154,7 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_acerca;
     private javax.swing.JMenuItem jmi_colaboradores;
     private javax.swing.JPanel jp_colaboradores;
+    private javax.swing.JPanel jp_crearNuevaFila;
     private javax.swing.JPanel jp_estadisticas_utilizado;
     private javax.swing.JPanel jp_estadisticas_utilizado1;
     private javax.swing.JPanel jp_estadisticas_utilizado2;
@@ -963,12 +1162,14 @@ public class JF_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jp_fondo;
     private javax.swing.JPanel jp_stats;
     private javax.swing.JProgressBar jpb_porcentajeCero;
+    private javax.swing.JTable jt_crue;
     // End of variables declaration//GEN-END:variables
     ManejoArchivosTexto adminEjecucion = new ManejoArchivosTexto("./ejecucion.txt");
-    ArrayList<JLabel> listaIndices = new ArrayList();
-    ArrayList<JLabel> listaNombres = new ArrayList();
-    ArrayList<JLabel> listaColaboraciones = new ArrayList();
-    ArrayList<JButton> listaBotonMenos = new ArrayList();
-    ArrayList<JButton> listaBotonMas = new ArrayList();
-    ArrayList<JProgressBar> listaBarras = new ArrayList<>();
+    Colaboradores adminColaboradores;
+    ArrayList<JLabel> listaIndices;
+    ArrayList<JLabel> listaNombres;
+    ArrayList<JLabel> listaColaboraciones;
+    ArrayList<JButton> listaBotonMenos;
+    ArrayList<JButton> listaBotonMas;
+    ArrayList<JProgressBar> listaBarras;
 }

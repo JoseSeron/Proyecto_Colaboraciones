@@ -19,6 +19,10 @@ public class Colaboradores implements Serializable {
     public Colaboradores() {
     }
 
+    public ArrayList<Colaborador> getColaboradores() {
+        return colaboradores;
+    }
+
     public Colaboradores(ArrayList<Colaborador> colaboradores) throws Exception {
         if (colaboradores.size() > 40) {
             throw new Exception("Lista puede tener maximo 40 colaboradores");
